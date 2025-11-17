@@ -105,7 +105,8 @@
                 class="icon"
               />
               <h3>Experience</h3>
-              <p>11 years <br />Software development engineer in Test</p>
+              
+              <p><span id="experienceYears"></span> years <br />Software development engineer in Test</p>
             </div>
             <div class="details-container">
               <img
@@ -561,6 +562,28 @@
       <p>Copyright &#169; 2025 Rakesh Kumar. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
+    <script>
+  function calculateExperienceYears() {
+    const startDate = new Date("2013-07-15");
+    const today = new Date();
+
+    let years = today.getFullYear() - startDate.getFullYear();
+
+    const hasCompletedYear =
+      today.getMonth() > 6 ||
+      (today.getMonth() === 6 && today.getDate() >= 15);
+
+    if (!hasCompletedYear) {
+      years--;
+    }
+
+    document.getElementById("experienceYears").textContent = years;
+  }
+
+  window.addEventListener("DOMContentLoaded", calculateExperienceYears);
+</script>
+
+<script src="script.js"></script>
   </body>
 </html>
 
